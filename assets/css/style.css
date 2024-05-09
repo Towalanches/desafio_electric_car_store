@@ -47,7 +47,7 @@ menu {
 main {
     display: grid;
     grid-area: producto;
-    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(80%, 1fr));
     justify-items: center;
     overflow-y: scroll;
     height: 90%;
@@ -166,6 +166,49 @@ footer i {
 }
 
 /* Medidas */
+@media (min-width: 576px) {
+    .grid-container {
+        grid-template-columns: 1.5fr 4.5fr 4.5fr;
+        grid-template-rows: 1fr 8fr 1fr;
+        grid-template-areas:
+            'navbar navbar navbar'
+            'filtro producto producto'
+            'footer footer footer';
+        height: 100vh;
+    }
+
+    .secciones {
+        display: flex;
+        gap: 1rem;
+    }
+
+
+    .dropdown {
+        display: none;
+    }
+
+    main {
+        grid-template-columns: repeat(auto-fill, minmax(50%, 1fr));
+    }
+
+    .filtro {
+        height: 100%;
+    }
+
+    .filtro select {
+        width: 95%;
+    }
+
+    .cambiopag {
+        position: fixed;
+        bottom: 10%;
+    }
+
+    footer {
+        padding: .5rem;
+    }
+}
+
 @media (min-width: 992px) {
     .grid-container {
         grid-template-columns: 2fr 8fr;
